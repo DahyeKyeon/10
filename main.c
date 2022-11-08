@@ -5,9 +5,22 @@
 
 int main(void){
 	
-	char str[30] = "happy C programming";
+	FILE*fp;
+	char str[30];
 	
-	printf("the length of string %s: %i\n", str, strlen(str));
+	fp = fopen("sample. txt", "w");
 	
-	return 0;
+	printf("input a word:");
+	scanf("%s", str);
+	fprintf(fp, "%s", str);
+	
+	printf("input a word:");
+	scanf("%s", str);
+	fprintf(fp, "%s", str);
+	
+	printf("input a word:");
+	scanf("%s", str);
+	fprintf(fp, "%s", str);
+	
+	fclose(fp);
 }
