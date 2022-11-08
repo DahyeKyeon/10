@@ -2,25 +2,19 @@
 #include <string.h>
 
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
-
-int main(void){
-	
-	FILE*fp;
+void main(void){
+	FILE*fp = NULL;
+	char c;
 	char str[30];
 	
-	fp = fopen("sample. txt", "w");
+	fp = fopen("sample. txt", "r");
 	
-	printf("input a word:");
-	scanf("%s", str);
-	fprintf(fp, "%s", str);
+	if(fp == NULL)
 	
-	printf("input a word:");
-	scanf("%s", str);
-	fprintf(fp, "%s", str);
-	
-	printf("input a word:");
-	scanf("%s", str);
-	fprintf(fp, "%s", str);
-	
+		printf("can't open file\n");
+		
+	while((c = fgetc(fp)) != EOF)
+		putchar(c);
+
 	fclose(fp);
 }
